@@ -4,29 +4,29 @@
 #include<stdlib.h>
 
 //let,source=A,Auxiliary=B,Destination=C
-int TOH(int n,char A,char B,char C)
+int TOH(int n,char a,char b,char c)
 {
     if(n==1)
     {
-        printf("Move %d disk from %c to %c:\n",n,A,B);
+        printf("Move %d disk from %c to %c:\n",n,a,c);
         return 1;
     }
     else
     {
-        TOH(n-1,A,B,C);
-        printf("Move %d disk form %c to %c:\n",n,A,C);
-        TOH(n-1,B,C,A);
+        TOH(n-1,a,c,b);
+        printf("Move %d disk form %c to %c:\n",n,a,c);
+        TOH(n-1,b,a,c);
     }
 }
 
 int main()
 {
-    //char source=S,Destination=D,Axiliary=A
+    
     int n;
     printf("Enter the  numbers of disks:");
     scanf("%d",&n);
     printf("Te sequence of solving the Tower of Hanoi problem is as follows:\n");
-    TOH(n,'S','D','A');
+    TOH(n,'A','B','C');
     getch();
     return 0;
 }
