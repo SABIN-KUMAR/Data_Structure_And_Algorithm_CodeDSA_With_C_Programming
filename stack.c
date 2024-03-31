@@ -20,7 +20,7 @@ void push(int item)
 
 void pop()
 {
-    if(top==-1)
+    if(top==-1 || top<0)
     {
         printf("Underflow!! and Exit \n");
     }
@@ -33,7 +33,7 @@ void pop()
 
 void display()
 {
-    if(top==-1)
+    if(top==-1 || top<0)
     {
         printf("The stack is empty.\n");
     }
@@ -42,7 +42,7 @@ void display()
         printf("Stack elements.");
         for(int i=0;i<=top;i++)
         {
-            printf("%d ",stack[i]);
+            printf("(%d)%d ",i,stack[i]);
         }
         printf("\n");
     }
